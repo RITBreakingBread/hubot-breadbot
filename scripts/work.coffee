@@ -15,7 +15,7 @@
 url = 'http://localhost/api/v1/logs'
 
 module.exports = (robot) ->
-  robot.respond /worked (\d+) (.*?) (.+)/i, id: 'worked', (msg) ->
+  robot.respond /worked (\d+.?\d+?) (.*?) (.+)/i, id: 'worked', (msg) ->
     if msg.match[1]? and msg.match[2]? and msg.match[3]?
       data = {
         username: msg.message.user.name,
